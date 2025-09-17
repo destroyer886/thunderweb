@@ -18,8 +18,8 @@ const transporter = nodemailer.createTransport({
   port: 587,
   secure: false, // Use `true` for port 465, `false` for all other ports
   auth: {
-    user: "dhruvchoudhary88649@gmail.com",
-    pass: "fugq mwry sqdx mmbn",
+    user: "yourmail",
+    pass: "your app pass",
   },
   tls: {
     rejectUnauthorized: false // Set this to false to trust self-signed certificates
