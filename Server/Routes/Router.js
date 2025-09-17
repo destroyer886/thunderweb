@@ -1,7 +1,6 @@
 const express = require('express');
 const { connectToDb } = require('../db');
-const multer = require('multer');
-const path = require('path');
+
 const nodemailer = require('nodemailer')
 const jwt = require('jsonwebtoken');
 const { ObjectId } = require('mongodb');
@@ -12,6 +11,22 @@ const {ok, setError, checkAdmin } = require('../Helper')
 
 const router = express.Router();
 const collections = {};
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  host: "smtp.google.com",
+  port: 587,
+  secure: false, // Use `true` for port 465, `false` for all other ports
+  auth: {
+    user: "dhruvchoudhary88649@gmail.com",
+    pass: "fugq mwry sqdx mmbn",
+  },
+  tls: {
+    rejectUnauthorized: false // Set this to false to trust self-signed certificates
+  }
+});
+
+const otpStore = {};
 
 
 const getCollections = async () => {
