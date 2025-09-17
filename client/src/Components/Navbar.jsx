@@ -10,7 +10,7 @@ import { FiSearch } from "react-icons/fi";
 
 import { useContext } from 'react';
 import { Context } from './AppContext';
-import Logo from '../assets/GF-logo.png'
+
 
 
 function Navbar() {
