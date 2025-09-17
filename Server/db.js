@@ -11,7 +11,7 @@ async function connectToDb() {
 
   client = new MongoClient(mongodburl);
   await client.connect();
-  db = client.db("Greenish");
+  db = client.db(process.env.DB_NAME);
   const Users = db.collection("Users");
 
   console.log("✅ MongoDB is connected with Greenish Farmer");
