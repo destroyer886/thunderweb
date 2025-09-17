@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin- user</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+
+<style>
+     .products-input {
+            width: 250px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+            color: #333;
+        }
+        .submitbtn {
+            display: inline-block;
+            width: 120px;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 10px 0;
+        }
+
+
+        form{
+            display: flex;
+            flex-direction: column;
+            padding: 10px 20px;
+        }
+</style>
+<body>
+    <%- include('./layouts/sidebar.ejs') %>
+<div class="container">
+
+
+    <form action="/admin/user-pin-change" method="post">
+       
+    old Pin:
+    <input name="old" class="products-input" type="number">
+    new Pin:
+    <input name="newpin" class="products-input" type="number">
+   
+    <button class="submitbtn" type="submit">Submit</button>
+
+    </form>
+</div>
+
+    
+</body>
+</html>

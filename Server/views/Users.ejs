@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handle Users</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+    <%- include('./layouts/sidebar.ejs') %>
+
+
+        <div class="container">
+
+            <form class="search-form" action="/admin/manage-users" method="get">
+
+                <input type="search" name="query" class="search-input">
+
+                <button type="submit">Search</button>
+
+
+            </form>
+
+            <h3 style="text-align: center;">
+                <%= data.length < 1 ? 'User not found' : '' %>
+            </h3>
+
+
+            <% data.forEach((e, index)=> { %>
+                <div class="item">
+                    <strong class="index">
+                        <%= index + 1 %>
+                    </strong>
+                    <p class="big">
+                        <%= e.email %>
+                    </p>
+                    <p class="big">
+                        <%= e.fname %>
+                            <%= e.lname %>
+                    </p>
+                    <button onclick="deleteUser('<%= e._id%>', '<%= e.fname%>')" style="color: red;"><i
+                            class="ri-delete-bin-fill"></i></button>
+                </div>
+                <% }); %>
+
+
+                    <div class="arrows">
+                        <i id="minus" onclick="changepage('-',' <%= data.length%>')" class="ri-arrow-left-line"></i>
+                        <i id="plus" onclick="changepage('+',' <%= data.length%>')" class="ri-arrow-right-line"></i>
+
+                    </div>
+
+        </div>
+
+
+        <script>
+
+            async function deleteUser(id, name) {
+
+                const permission = confirm(`do you want to delete ${name} `);
+
+                if (permission) {
+                    await fetch(`/admin/delete-user?id=${id}`);
+
+                    window.location.reload();
+                }
+
+
+            }
+
+            const backicon = document.querySelector('#minus');
+            const nexticon = document.querySelector('#plus');
+
+
+
+            function changepage(type, data) {
+
+                console.log()
+
+
+
+                const location = window.location.search;
+
+                const params = new URLSearchParams(location);
+
+
+                const page = params.get('page') || 1;
+
+
+                if (Number(page) === 1 && type === '-') {
+                    backicon.style.opacity = 0.6
+
+                } else {
+
+                    if (Number(data) < 40) {
+                        nexticon.style.opacity = 0.6;
+                    } else {
+                        window.location = `/admin/manage-users?page=${type == '+' ? Number(page) + 1 : Number(page) - 1}`
+                    }
+
+                }
+
+
+
+
+
+                //  if(Number(page) > 1){
+                //       window.location =  `/admin/manage-users?page=${type == '+' ? Number(page) + 1 : Number(page) - 1}`
+                //  }else{
+
+                //     backicon.style.opacity = 0.6
+
+                //  }
+
+
+
+
+
+            }
+
+
+
+        </script>
+
+</body>
+
+</html>

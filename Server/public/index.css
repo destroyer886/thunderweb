@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.sidebar{
+
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 17%;
+    background-color: rgb(35, 35, 35);
+
+}
+
+h3{
+    font-weight: 300;
+}
+
+.sidebar h3{
+   margin-top: 1pc;
+   color: rgb(250, 250, 250);
+   text-align: center;
+   font-weight: 300;
+}
+
+.sidebar ul{
+    display: flex;
+    flex-direction: column;
+    gap: 2pc;
+    padding: 40px 20px;
+}
+
+.sidebar ul li{
+    list-style: none;
+    color: aliceblue;
+}
+
+.content{
+    width: 83%;
+    margin-left: 17%;
+    /* height: 60vh; */
+    background-color: rgb(205, 207, 207);
+}
+
+.container{
+    width: 83%;
+    margin-left: 17%;
+}
+.heading{
+   padding-top: 1pc;
+   padding-left: 1pc;
+}
+
+
+.inner-content{
+    width: 100%;
+    display: flex;
+    gap: 3pc;
+    padding: 25px 40px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+.content .inner-content div{
+    flex: 1;
+    height: 45vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    gap: 6px;
+    border-radius: 20px;
+    font-size: 1.5pc;
+    
+}
+
+
+.small{
+    font-size: 0.9pc;
+}
+
+.down-content{
+    background-color: white;
+}
+
+
+.inner  {
+    
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 3pc;
+   padding: 15px 60px;
+  
+
+}
+
+
+.down-content .inner div{
+    flex: 1;
+    height: 30vh;
+    background-color: blueviolet;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    gap: 6px;
+    font-size: 1.1pc;
+    
+
+}
+
+.orders{
+    
+    padding-top: 1pc;
+    text-align: center;
+}
+
+.search-form{
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    gap: 12px;
+    margin: 1pc auto;
+    margin-bottom: 2pc;
+}
+
+
+.search-input {
+    outline: none;
+    width: 100%;
+    border: none;
+    background-color: rgb(33, 33, 33);
+    color: white;
+    padding: 12px 15px;
+    border-radius: 6px;
+}
+
+
+.search-form select{
+    width: 70px;
+}
+.search-form button{
+    padding: 14px;
+    border-radius: 10px;
+    background-color: orangered;
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.item {
+
+    display: flex;
+    gap: 40px;
+    border-bottom: 1px solid gray ;
+    width: 60%;
+    padding: 10px ;
+    margin: auto;
+    margin-bottom: 13px;
+
+
+}
+.index{
+    width: 20px;
+}
+
+.big{
+    width: 260px;
+}
+
+
+.item button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 1pc;
+
+}
+
+
+.arrows{
+    margin: 2pc auto;
+    font-size: 1.7pc;
+    width: 100px;
+    display: flex;
+    gap: 16px;
+    color: rgb(0, 0, 138);
+    justify-content: center;
+}
+
+.modal{
+    background-color: rgba(0, 0, 0, 0.493);
+    position: fixed;
+    display: none;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    overflow-y: scroll;
+}
+
+
+.modal-inner{
+    min-height: 40vh;
+    width: 40%;
+    padding: 2pc 0pc;
+    background-color: white;
+    color: black;
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+
+#detail-img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+
+}
+
+#cancel{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+
+
+.modalitem{
+    justify-content: space-between;
+    width: 80%;
+   
+}
+
+.modalitem p{
+    width: initial;
+}
+
+
+.product-img img{
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+}
+
+.hidden{
+    display: none;
+
+}
+
+#imgs{
+    display: flex;
+    gap: 10px;
+    height: 20vh;
+}
+
+#imgs label{
+    flex: 1;
+}
+
+#imgs img{
+    width: 100%;
+    object-fit: cover;
+    height: 100px;
+}
+
+.settings{
+    padding: 2pc;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.settings p{
+    margin-top: 3px;
+}
+
+
+.settings a{
+    color: blue;
+    font-size: 12px;
+ 
+}
+
+
+
+
+
